@@ -46,6 +46,7 @@
     <Content Include="DangKy.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="ThanhToan.aspx" />
+    <Content Include="DatHangThanhCong.aspx" />
     <Content Include="Ajax\ThemGioHang.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="ThanhToan.aspx.designer.cs">
       <DependentUpon>ThanhToan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatHangThanhCong.aspx.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHangThanhCong.aspx.designer.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ajax\ThemGioHang.aspx.cs">
       <DependentUpon>Ajax\ThemGioHang.aspx</DependentUpon>
