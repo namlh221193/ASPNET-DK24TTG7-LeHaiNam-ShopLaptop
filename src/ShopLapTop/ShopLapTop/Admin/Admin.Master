@@ -1,0 +1,157 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="ShopLapTop.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Admin Shop Laptop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#2563eb', secondary: '#1e40af' },
+                    fontFamily: { sans: ['Be Vietnam Pro', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        .nav-item { @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all; }
+        .nav-item-active { background: rgba(255,255,255,0.15); color:#fff; }
+        .nav-item-inactive { color: rgba(255,255,255,0.65); }
+        .nav-item-inactive:hover { background: rgba(255,255,255,0.08); color:#fff; }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body class="bg-slate-100 min-h-screen">
+<form id="form1" runat="server">
+
+  <%-- ===== SIDEBAR ===== --%>
+  <aside id="sidebar" class="fixed inset-y-0 left-0 w-60 bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col z-40 shadow-xl">
+
+    <%-- Brand --%>
+    <div class="px-5 py-5 border-b border-white/10">
+      <a href='<%= ResolveUrl("~/Admin/Default.aspx") %>' class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center font-bold text-sm shadow-lg">SL</div>
+        <div>
+          <p class="font-bold text-sm leading-tight">Shop Laptop</p>
+          <p class="text-xs text-slate-400 leading-tight">Admin Panel</p>
+        </div>
+      </a>
+    </div>
+
+    <%-- Navigation --%>
+    <nav class="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+
+      <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest px-3 mb-2">Quản lý</p>
+
+      <a href='<%= ResolveUrl("~/Admin/Default.aspx") %>'
+         class='<%= GetNavClass("Default.aspx") %>'>
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        Dashboard
+      </a>
+
+      <a href='<%= ResolveUrl("~/Admin/SanPham.aspx") %>'
+         class='<%= GetNavClass("SanPham.aspx") %>'>
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+        Sản phẩm
+        <span class="ml-auto text-xs bg-white/10 px-2 py-0.5 rounded-full"><asp:Literal ID="litSoSP" runat="server" /></span>
+      </a>
+
+      <a href='<%= ResolveUrl("~/Admin/DonHang.aspx") %>'
+         class='<%= GetNavClass("DonHang.aspx") %>'>
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+        Đơn hàng
+        <span class="ml-auto text-xs bg-orange-500 text-white px-2 py-0.5 rounded-full"><asp:Literal ID="litDHCho" runat="server" /></span>
+      </a>
+
+      <div class="pt-3 mt-3 border-t border-white/10">
+        <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest px-3 mb-2">Cửa hàng</p>
+        <a href='<%= ResolveUrl("~/Index.aspx") %>'
+           class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-white/8">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+          Xem cửa hàng
+        </a>
+      </div>
+    </nav>
+
+    <%-- User info --%>
+    <div class="px-4 py-4 border-t border-white/10">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-9 h-9 bg-blue-500 rounded-xl flex items-center justify-center font-bold text-sm">A</div>
+        <div class="min-w-0">
+          <p class="text-sm font-medium truncate"><asp:Literal ID="litTenAdmin" runat="server" /></p>
+          <p class="text-xs text-slate-400">Quản trị viên</p>
+        </div>
+      </div>
+      <asp:LinkButton ID="btnDangXuat" runat="server" OnClick="btnDangXuat_Click" CausesValidation="false"
+        CssClass="flex items-center gap-2 text-xs text-slate-400 hover:text-red-400 transition w-full px-2 py-1.5 rounded-lg hover:bg-white/5">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg>
+        Đăng xuất
+      </asp:LinkButton>
+    </div>
+  </aside>
+
+  <%-- ===== MAIN AREA ===== --%>
+  <div class="ml-60 min-h-screen flex flex-col">
+
+    <%-- Top header --%>
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 px-6 py-3.5 flex items-center justify-between shadow-sm">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <h1 class="font-bold text-slate-700 text-base"><%: Page.Title %></h1>
+      </div>
+      <div class="flex items-center gap-3 text-sm text-slate-500">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span id="headerClock"></span>
+      </div>
+    </header>
+
+    <%-- Page content --%>
+    <main class="flex-1 p-6 max-w-7xl mx-auto w-full">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </main>
+
+    <footer class="text-center text-xs text-slate-400 py-4 border-t border-slate-200 bg-white">
+      &copy; 2026 Shop Laptop Admin &bull; ASP.NET Web Forms
+    </footer>
+  </div>
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  // Live clock
+  function updateClock() {
+    var now = new Date();
+    var h = now.getHours().toString().padStart(2,'0');
+    var m = now.getMinutes().toString().padStart(2,'0');
+    var s = now.getSeconds().toString().padStart(2,'0');
+    var el = document.getElementById('headerClock');
+    if (el) el.textContent = h + ':' + m + ':' + s;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+<asp:ContentPlaceHolder ID="scripts" runat="server" />
+</body>
+</html>
