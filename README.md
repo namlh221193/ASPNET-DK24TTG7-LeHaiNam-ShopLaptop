@@ -9,7 +9,7 @@ Website bán laptop xây dựng bằng **ASP.NET Web Forms (.NET Framework 4.8)*
 | Windows | 10 / 11 |
 | Visual Studio | 2022 (workload **ASP.NET and web development**) |
 | SQL Server | SQL Server Express hoặc Developer Edition |
-| SSMS | SQL Server Management Studio (tùy chọn, dùng để chạy script DB) |
+| SSMS | SQL Server Management Studio |
 
 ## Chạy dự án từ đầu (sau khi clone)
 
@@ -33,17 +33,16 @@ src/ShopLapTop/ShopLapTop/Database/CuaHangLapTop.sql
 
 Script sẽ tự động:
 - Tạo database `CuaHangLapTop`
-- Tạo bảng, khóa ngoại (kể cả `ON DELETE CASCADE` cho danh mục)
-- Nạp dữ liệu mẫu: danh mục, sản phẩm, tài khoản, đơn hàng
+- Tạo bảng, khóa ngoại và nạp dữ liệu mẫu: danh mục, sản phẩm, tài khoản, đơn hàng
 
-**Tài khoản mẫu:**
+**Tài khoản test:**
 
 | Vai trò | Tên đăng nhập | Mật khẩu |
 |---|---|---|
 | Quản trị viên | `admin` | `123456` |
 | Khách hàng | `khach1` | `123456` |
 
-> **Lưu ý:** Script sẽ **xóa và tạo lại** database `CuaHangLapTop` nếu đã tồn tại. Chỉ chạy khi muốn reset dữ liệu về trạng thái ban đầu.
+> **Lưu ý:** File sql sẽ **xóa và tạo lại** database `CuaHangLapTop` nếu đã tồn tại. Chỉ chạy khi muốn reset dữ liệu về trạng thái ban đầu.
 
 ### Bước 3: Cấu hình chuỗi kết nối
 
@@ -55,8 +54,6 @@ Mở file `src/ShopLapTop/ShopLapTop/Web.config` và kiểm tra `connectionStrin
      providerName="System.Data.SqlClient" />
 ```
 
-Nếu SQL Server của bạn dùng tên instance khác (ví dụ `localhost`, `(localdb)\MSSQLLocalDB`), hãy sửa `Data Source` cho đúng.
-
 ### Bước 4: Mở solution và restore NuGet
 
 1. Mở Visual Studio 2022.
@@ -66,31 +63,11 @@ Nếu SQL Server của bạn dùng tên instance khác (ví dụ `localhost`, `(
 src/ShopLapTop/ShopLapTop.slnx
 ```
 
-3. Visual Studio sẽ tự restore package NuGet khi build. Nếu cần restore thủ công, chạy trong thư mục `src/ShopLapTop/ShopLapTop`:
-
-```bash
-nuget restore ShopLapTop.csproj
-```
-
 ### Bước 5: Build và chạy
 
 1. Chọn cấu hình **Debug**.
 2. Nhấn **F5** (hoặc **Ctrl+F5** để chạy không debug).
 3. Trình duyệt sẽ mở trang chủ (thường là `https://localhost:44334/`).
-
-## Cấu trúc thư mục chính
-
-```
-src/ShopLapTop/ShopLapTop/
-├── Database/
-│   └── CuaHangLapTop.sql    ← Script DB duy nhất, chạy 1 lần
-├── Admin/                   ← Trang quản trị (sản phẩm, danh mục, đơn hàng)
-├── App_Code/                ← KetNoi, GioHangHelper, UploadHelper...
-├── Images/                  ← Hình ảnh tĩnh (đã có sẵn trong repo)
-│   └── Products/            ← Ảnh sản phẩm & danh mục mẫu (không dùng link ngoài)
-├── Web.config               ← Cấu hình kết nối DB
-└── ShopLapTop.csproj
-```
 
 ## Chức năng chính
 
@@ -114,14 +91,6 @@ src/ShopLapTop/ShopLapTop/
 **Lỗi NuGet khi build**
 - Mở Visual Studio → **Tools → NuGet Package Manager → Package Manager Console**.
 - Chạy: `Update-Package -reinstall`
-
-**Upload ảnh bị lỗi**
-- Đảm bảo thư mục `Images/Products` và `Images/Categories` có quyền ghi (IIS Express tự xử lý khi chạy debug).
-- File ảnh phải là JPG/PNG/GIF/WEBP và nhỏ hơn 5MB.
-
-**Tiếng Việt bị lỗi font trong database**
-- Chạy lại file `CuaHangLapTop.sql` trong SSMS (đảm bảo file được lưu UTF-8).
-- Trong SSMS: **Query → SQLCMD Mode** tắt, chạy script bình thường.
 
 ## Reset dữ liệu về ban đầu
 
