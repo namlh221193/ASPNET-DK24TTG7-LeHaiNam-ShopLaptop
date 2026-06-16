@@ -39,6 +39,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="ProductList.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
   </ItemGroup>
@@ -53,6 +55,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\KetNoi.cs" />
     <Compile Include="App_Code\GioHangItem.cs" />
