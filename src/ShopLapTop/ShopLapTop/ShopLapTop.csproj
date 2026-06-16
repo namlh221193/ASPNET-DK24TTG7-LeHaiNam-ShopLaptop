@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
     <Content Include="Admin\DanhMuc.aspx" />
-    <Content Include="Database\fix_fk_cascade.sql" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="ProductList.aspx" />
@@ -229,9 +228,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database\CapNhat_DaDanhMuc.sql" />
     <None Include="Database\CuaHangLapTop.sql" />
-    <None Include="Database\fix_unicode.sql" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
