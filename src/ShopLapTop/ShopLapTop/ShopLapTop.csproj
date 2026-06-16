@@ -41,6 +41,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="ProductList.aspx" />
+    <Content Include="ChiTiet.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
   </ItemGroup>
@@ -70,7 +71,15 @@
     <Compile Include="ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChiTiet.aspx.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTiet.aspx.designer.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\KetNoi.cs" />
+    <Compile Include="App_Code\DanhMucHelper.cs" />
     <Compile Include="App_Code\GioHangItem.cs" />
     <Compile Include="App_Code\GioHangHelper.cs" />
     <Compile Include="Site.Master.cs">
