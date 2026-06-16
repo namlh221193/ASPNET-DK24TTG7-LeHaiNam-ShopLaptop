@@ -44,6 +44,7 @@
     <Content Include="ChiTiet.aspx" />
     <Content Include="GioHang.aspx" />
     <Content Include="DangKy.aspx" />
+    <Content Include="DangNhap.aspx" />
     <Content Include="Ajax\ThemGioHang.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="DangKy.aspx.designer.cs">
       <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ajax\ThemGioHang.aspx.cs">
       <DependentUpon>Ajax\ThemGioHang.aspx</DependentUpon>
