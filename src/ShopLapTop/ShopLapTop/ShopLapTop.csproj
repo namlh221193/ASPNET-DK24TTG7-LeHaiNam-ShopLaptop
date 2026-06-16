@@ -42,6 +42,8 @@
     <Content Include="Index.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="ChiTiet.aspx" />
+    <Content Include="GioHang.aspx" />
+    <Content Include="Ajax\ThemGioHang.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
   </ItemGroup>
@@ -77,6 +79,17 @@
     </Compile>
     <Compile Include="ChiTiet.aspx.designer.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\ThemGioHang.aspx.cs">
+      <DependentUpon>Ajax\ThemGioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App_Code\KetNoi.cs" />
     <Compile Include="App_Code\DanhMucHelper.cs" />
