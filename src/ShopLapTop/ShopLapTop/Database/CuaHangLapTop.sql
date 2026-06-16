@@ -86,12 +86,12 @@ GO
 -- 2. DU LIEU MAU - DANH MUC
 -- =============================================================================
 
--- Nhu cau su dung
-INSERT INTO LoaiSP (TenLoai, LoaiDanhMuc) VALUES
-(N'Gaming',     1),
-(N'Văn phòng',  1),
-(N'Sinh viên',  1),
-(N'Đồ họa',     1);
+-- Nhu cau su dung (anh luu trong Images/Products/)
+INSERT INTO LoaiSP (TenLoai, LoaiDanhMuc, HinhAnh) VALUES
+(N'Gaming',    1, N'Images/Products/gaming-01.jpg'),
+(N'Văn phòng', 1, N'Images/Products/office-01.jpg'),
+(N'Sinh viên', 1, N'Images/Products/student-01.jpg'),
+(N'Đồ họa',    1, N'Images/Products/creator-01.jpg');
 
 -- Thuong hieu
 INSERT INTO LoaiSP (TenLoai, LoaiDanhMuc) VALUES
@@ -122,83 +122,83 @@ GO
 INSERT INTO SanPham (TenSP, MoTa, Gia, SoLuong, HinhAnh, HangSX) VALUES
 (N'ASUS ROG Strix G16',
  N'Laptop gaming mạnh mẽ, RTX 4060, Intel Core i7 Gen 13, RAM 16GB, SSD 512GB, màn hình 165Hz',
- 28990000, 15, N'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400', N'ASUS'),
+ 28990000, 15, N'Images/Products/gaming-01.jpg', N'ASUS'),
 
 (N'Dell XPS 15',
  N'Laptop cao cấp cho doanh nhân, màn hình OLED 3.5K, Intel Core i7, RAM 16GB, SSD 512GB',
- 35990000, 10, N'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400', N'Dell'),
+ 35990000, 10, N'Images/Products/office-01.jpg', N'Dell'),
 
 (N'HP Pavilion 15',
  N'Laptop văn phòng giá rẻ, AMD Ryzen 5, RAM 8GB, SSD 256GB, thiết kế gọn nhẹ',
- 12990000, 25, N'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400', N'HP'),
+ 12990000, 25, N'Images/Products/office-02.jpg', N'HP'),
 
 (N'Lenovo IdeaPad 3',
  N'Laptop sinh viên lý tưởng, Intel Core i5, RAM 8GB, SSD 512GB, nhẹ và bền bỉ',
- 10990000, 30, N'https://images.unsplash.com/photo-1525547719570-a1d2b4b93489?w=400', N'Lenovo'),
+ 10990000, 30, N'Images/Products/student-01.jpg', N'Lenovo'),
 
 (N'MSI Creator Z16',
  N'Laptop đồ họa chuyên nghiệp, RTX 3070 Ti, màn hình 16 inch 2K, thiết kế sang trọng',
- 42990000, 8, N'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400', N'MSI'),
+ 42990000, 8, N'Images/Products/creator-01.jpg', N'MSI'),
 
 (N'Acer Nitro 5',
  N'Laptop gaming giá tốt, RTX 3050, Intel Core i5, RAM 16GB, tản nhiệt hiệu quả',
- 19990000, 20, N'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', N'Acer'),
+ 19990000, 20, N'Images/Products/gaming-02.jpg', N'Acer'),
 
 (N'MacBook Air M2',
  N'Apple MacBook Air chip M2, RAM 8GB, SSD 256GB, siêu mỏng nhẹ, pin 18 giờ',
- 27990000, 12, N'https://images.unsplash.com/photo-1611186871348-b1ce06e07c0f?w=400', N'Apple'),
+ 27990000, 12, N'Images/Products/macbook-01.jpg', N'Apple'),
 
 (N'ASUS VivoBook 15',
  N'Laptop học tập đa năng, Intel Core i3, RAM 8GB, SSD 256GB, phù hợp sinh viên',
- 8990000, 35, N'https://images.unsplash.com/photo-1587613865765-3f3c3f5b8f0e?w=400', N'ASUS'),
+ 8990000, 35, N'Images/Products/thin-01.jpg', N'ASUS'),
 
 (N'Lenovo Legion 5 Pro',
  N'Laptop gaming Lenovo, RTX 4070, AMD Ryzen 7, RAM 16GB, màn hình 165Hz, hiệu năng cao',
- 32990000, 12, N'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400', N'Lenovo'),
+ 32990000, 12, N'Images/Products/gaming-03.jpg', N'Lenovo'),
 
 (N'ASUS TUF Gaming A15',
  N'Laptop gaming giá rẻ từ ASUS, RTX 4050, Ryzen 5, RAM 16GB, SSD 512GB, vỏ nhôm',
- 21990000, 18, N'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', N'ASUS'),
+ 21990000, 18, N'Images/Products/gaming-04.jpg', N'ASUS'),
 
 (N'Dell Inspiron 14',
  N'Laptop văn phòng mỏng nhẹ, Intel Core i5, RAM 16GB, pin trâu 12 giờ',
- 16990000, 22, N'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400', N'Dell'),
+ 16990000, 22, N'Images/Products/office-03.jpg', N'Dell'),
 
 (N'HP Envy x360',
  N'Laptop 2-in-1 cao cấp, màn hình cảm ứng, AMD Ryzen 7, RAM 16GB, xoay gập 360°',
- 24990000, 10, N'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400', N'HP'),
+ 24990000, 10, N'Images/Products/office-01.jpg', N'HP'),
 
 (N'MSI Katana 15',
  N'Laptop gaming MSI tầm trung, RTX 4060, Intel Core i7, RAM 16GB, bàn phím RGB đẹp',
- 26990000, 14, N'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400', N'MSI'),
+ 26990000, 14, N'Images/Products/gaming-02.jpg', N'MSI'),
 
 (N'Acer Swift 3',
  N'Laptop sinh viên vỏ nhôm, Intel Core i5, RAM 8GB, SSD 512GB, nhẹ chỉ 1.5kg',
- 13990000, 28, N'https://images.unsplash.com/photo-1525547719570-a1d2b4b93489?w=400', N'Acer'),
+ 13990000, 28, N'Images/Products/student-01.jpg', N'Acer'),
 
 (N'MacBook Pro 14 M3',
  N'MacBook Pro chip M3, RAM 18GB, SSD 512GB, màn hình Liquid Retina XDR, hiệu năng đỉnh',
- 45990000, 6, N'https://images.unsplash.com/photo-1611186871348-b1ce06e07c0f?w=400', N'Apple'),
+ 45990000, 6, N'Images/Products/macbook-01.jpg', N'Apple'),
 
 (N'Lenovo ThinkPad E14',
  N'Laptop doanh nhân bền bỉ, Intel Core i5, RAM 16GB, bàn phím ThinkPad huyền thoại',
- 18990000, 16, N'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400', N'Lenovo'),
+ 18990000, 16, N'Images/Products/office-02.jpg', N'Lenovo'),
 
 (N'ASUS ZenBook 14',
  N'Laptop văn phòng cao cấp, màn hình OLED, Intel Core i7, RAM 16GB, siêu mỏng 14mm',
- 23990000, 11, N'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400', N'ASUS'),
+ 23990000, 11, N'Images/Products/thin-01.jpg', N'ASUS'),
 
 (N'Gigabyte Aorus 15',
  N'Laptop gaming cao cấp Gigabyte, RTX 4080, Intel Core i9, RAM 32GB, hiệu năng khủng',
- 54990000, 5, N'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400', N'Gigabyte'),
+ 54990000, 5, N'Images/Products/gaming-01.jpg', N'Gigabyte'),
 
 (N'Razer Blade 15',
  N'Laptop gaming cao cấp Razer, RTX 4070, Intel Core i7, vỏ nhôm CNC, thiết kế tối giản',
- 49990000, 7, N'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', N'Razer'),
+ 49990000, 7, N'Images/Products/gaming-03.jpg', N'Razer'),
 
 (N'HP Victus 16',
  N'Laptop gaming HP, RTX 3050, AMD Ryzen 5, RAM 16GB, màn hình 144Hz, giá tốt',
- 17990000, 20, N'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400', N'HP');
+ 17990000, 20, N'Images/Products/gaming-04.jpg', N'HP');
 GO
 
 -- =============================================================================

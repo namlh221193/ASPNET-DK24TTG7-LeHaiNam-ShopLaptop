@@ -22,7 +22,6 @@
             <p class="text-center text-slate-500 mt-4 text-sm">
                 Chưa có tài khoản? <a href="DangKy.aspx" class="text-primary hover:underline">Đăng ký ngay</a>
             </p>
-            <p class="text-center text-slate-400 mt-2 text-xs">Demo: admin / 123456</p>
         </div>
     </div>
 </asp:Content>

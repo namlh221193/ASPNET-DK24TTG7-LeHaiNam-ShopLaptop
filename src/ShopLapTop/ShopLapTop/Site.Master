@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ShopLapTop.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ShopLapTop.SiteMaster" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -175,11 +175,11 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-2">Địa chỉ</h3>
-                        <p class="text-slate-400 text-sm">123 Đường ABC, Quận 1, TP.HCM</p>
+                        <p class="text-slate-400 text-sm">Landmark 81, TP.HCM</p>
                     </div>
                 </div>
                 <div class="border-t border-slate-700 mt-6 pt-4 text-center text-slate-500 text-sm">
-                    &copy; 2026 Shop Laptop - Dự án ASP.NET Web Forms
+                    &copy; 2026 Shop Laptop - Lê Hải Nam
                 </div>
             </div>
         </footer>
