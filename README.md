@@ -40,7 +40,6 @@ Script sẽ tự động:
 | Vai trò | Tên đăng nhập | Mật khẩu |
 |---|---|---|
 | Quản trị viên | `admin` | `123456` |
-| Khách hàng | `khach1` | `123456` |
 
 > **Lưu ý:** File sql sẽ **xóa và tạo lại** database `CuaHangLapTop` nếu đã tồn tại. Chỉ chạy khi muốn reset dữ liệu về trạng thái ban đầu.
 
