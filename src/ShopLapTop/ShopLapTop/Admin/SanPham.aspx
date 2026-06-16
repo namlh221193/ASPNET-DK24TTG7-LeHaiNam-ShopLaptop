@@ -32,8 +32,16 @@
                 <asp:TextBox ID="txtSoLuong" runat="server" CssClass="w-full border border-slate-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" />
             </div>
             <div>
-                <label class="block text-slate-700 text-sm font-medium mb-1">Link hình ảnh</label>
-                <asp:TextBox ID="txtHinhAnh" runat="server" CssClass="w-full border border-slate-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" />
+                <label class="block text-slate-700 text-sm font-medium mb-1">Hình ảnh sản phẩm</label>
+                <asp:HiddenField ID="hfHinhAnh" runat="server" />
+                <asp:Panel ID="pnlImgPreview" runat="server" Visible="false" CssClass="mb-2 flex items-center gap-3">
+                    <asp:Image ID="imgPreview" runat="server"
+                        CssClass="w-24 h-16 object-cover rounded-lg border border-slate-200" />
+                    <p class="text-xs text-slate-400">Hình hiện tại.<br />Chọn file mới để thay thế.</p>
+                </asp:Panel>
+                <asp:FileUpload ID="fuHinhAnh" runat="server"
+                    CssClass="block w-full text-sm text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary file:text-white hover:file:bg-secondary cursor-pointer" />
+                <p class="text-xs text-slate-400 mt-1">JPG, PNG, GIF, WEBP - tối đa 5MB</p>
             </div>
             <div class="md:col-span-2">
                 <label class="block text-slate-700 text-sm font-medium mb-1">Mô tả</label>

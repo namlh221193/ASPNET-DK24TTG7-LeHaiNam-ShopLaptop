@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Admin\DanhMuc.aspx" />
+    <Content Include="Database\fix_fk_cascade.sql" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="ProductList.aspx" />
@@ -121,7 +123,15 @@
       <DependentUpon>ThemGioHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Admin\DanhMuc.aspx.cs">
+      <DependentUpon>DanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DanhMuc.aspx.designer.cs">
+      <DependentUpon>DanhMuc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\DanhMucHelper.cs" />
+    <Compile Include="App_Code\UploadHelper.cs" />
     <Compile Include="App_Code\GioHangHelper.cs" />
     <Compile Include="App_Code\GioHangItem.cs" />
     <Compile Include="App_Code\KetNoi.cs" />
