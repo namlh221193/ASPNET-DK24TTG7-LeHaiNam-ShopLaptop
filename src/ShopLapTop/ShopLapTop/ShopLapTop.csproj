@@ -43,6 +43,7 @@
     <Content Include="ProductList.aspx" />
     <Content Include="ChiTiet.aspx" />
     <Content Include="GioHang.aspx" />
+    <Content Include="DangKy.aspx" />
     <Content Include="Ajax\ThemGioHang.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site.Master" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="GioHang.aspx.designer.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.aspx.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy.aspx.designer.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ajax\ThemGioHang.aspx.cs">
       <DependentUpon>Ajax\ThemGioHang.aspx</DependentUpon>
