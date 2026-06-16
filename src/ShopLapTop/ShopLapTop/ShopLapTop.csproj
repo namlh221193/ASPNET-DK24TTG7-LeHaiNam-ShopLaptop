@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B916BBEF-650E-4CB5-A03F-78183BB66748}</ProjectGuid>
+    <ProjectGuid>{28D44367-62CB-2D84-2F04-BC7826360E60}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -77,6 +77,9 @@
     <Content Include="Ajax\ThemGioHang.aspx" />
     <Content Include="ChiTiet.aspx" />
     <Content Include="DangKy.aspx" />
+    <Content Include="DoiMatKhau.aspx" />
+    <Content Include="LichSuDonHang.aspx" />
+    <Content Include="ThongTin.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DatHangThanhCong.aspx" />
     <Content Include="Default.aspx" />
@@ -135,6 +138,27 @@
     </Compile>
     <Compile Include="DangKy.aspx.designer.cs">
       <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuDonHang.aspx.cs">
+      <DependentUpon>LichSuDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichSuDonHang.aspx.designer.cs">
+      <DependentUpon>LichSuDonHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTin.aspx.cs">
+      <DependentUpon>ThongTin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTin.aspx.designer.cs">
+      <DependentUpon>ThongTin.aspx</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.aspx.cs">
       <DependentUpon>DangNhap.aspx</DependentUpon>
