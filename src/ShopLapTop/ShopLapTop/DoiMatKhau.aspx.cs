@@ -46,14 +46,11 @@ namespace ShopLapTop
             }
 
             int maND = Convert.ToInt32(Session["MaND"]);
-            object dung = KetNoi.LayGiaTri(
-                "SELECT COUNT(*) FROM NguoiDung WHERE MaND = @id AND MatKhau = @mk",
-                new SqlParameter[] {
-                    new SqlParameter("@id", maND),
-                    new SqlParameter("@mk", mkCu)
-                });
+            object mkLuu = KetNoi.LayGiaTri(
+                "SELECT MatKhau FROM NguoiDung WHERE MaND = @id",
+                new SqlParameter[] { new SqlParameter("@id", maND) });
 
-            if (Convert.ToInt32(dung) == 0)
+            if (mkLuu == null || !MatKhauHelper.KiemTra(mkCu, mkLuu.ToString()))
             {
                 lblLoi.Text = "Mật khẩu hiện tại không đúng!";
                 lblLoi.Visible = true;
@@ -64,7 +61,7 @@ namespace ShopLapTop
             KetNoi.ThucThi(
                 "UPDATE NguoiDung SET MatKhau = @mkMoi WHERE MaND = @id",
                 new SqlParameter[] {
-                    new SqlParameter("@mkMoi", mkMoi),
+                    new SqlParameter("@mkMoi", MatKhauHelper.MaHoa(mkMoi)),
                     new SqlParameter("@id", maND)
                 });
 

@@ -25,10 +25,9 @@ namespace ShopLapTop
                 return;
             }
 
-            string sql = "SELECT * FROM NguoiDung WHERE TenDangNhap = @ten AND MatKhau = @mk";
+            string sql = "SELECT * FROM NguoiDung WHERE TenDangNhap = @ten";
             DataTable dt = KetNoi.LayDuLieu(sql, new SqlParameter[] {
-                new SqlParameter("@ten", tenDN),
-                new SqlParameter("@mk", matKhau)
+                new SqlParameter("@ten", tenDN)
             });
 
             if (dt.Rows.Count == 0)
@@ -39,6 +38,26 @@ namespace ShopLapTop
             }
 
             DataRow row = dt.Rows[0];
+            string matKhauLuu = row["MatKhau"].ToString();
+
+            if (!MatKhauHelper.KiemTra(matKhau, matKhauLuu))
+            {
+                lblLoi.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                lblLoi.Visible = true;
+                return;
+            }
+
+            // Tài khoản cũ lưu mật khẩu thuần → tự nâng cấp lên dạng mã hóa
+            if (!MatKhauHelper.DaDuocMaHoa(matKhauLuu))
+            {
+                KetNoi.ThucThi(
+                    "UPDATE NguoiDung SET MatKhau = @mk WHERE MaND = @id",
+                    new SqlParameter[] {
+                        new SqlParameter("@mk", MatKhauHelper.MaHoa(matKhau)),
+                        new SqlParameter("@id", row["MaND"])
+                    });
+            }
+
             Session["MaND"] = row["MaND"];
             Session["TenDangNhap"] = row["TenDangNhap"];
             Session["HoTen"] = row["HoTen"];

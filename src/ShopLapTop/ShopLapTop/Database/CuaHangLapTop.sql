@@ -55,7 +55,7 @@ CREATE TABLE SanPham_Loai (
 CREATE TABLE NguoiDung (
     MaND         INT IDENTITY(1,1) PRIMARY KEY,
     TenDangNhap  NVARCHAR(50)  NOT NULL UNIQUE,
-    MatKhau      NVARCHAR(100) NOT NULL,
+    MatKhau      NVARCHAR(200) NOT NULL,
     HoTen        NVARCHAR(100),
     Email        NVARCHAR(100),
     SDT          NVARCHAR(20),
@@ -110,9 +110,10 @@ GO
 -- 3. DU LIEU MAU - NGUOI DUNG
 -- =============================================================================
 
+-- Mat khau mau: 123456 (da ma hoa PBKDF2 + salt, xem MatKhauHelper.cs)
 INSERT INTO NguoiDung (TenDangNhap, MatKhau, HoTen, Email, SDT, VaiTro) VALUES
-(N'admin',  N'123456', N'Quản trị viên', N'admin@shoplaptop.vn',  N'0901234567', 1),
-(N'khach1', N'123456', N'Nguyễn Văn A',  N'khach1@gmail.com',   N'0912345678', 0);
+(N'admin',  N'qaBmAs6fprQMCvlJpwNY0ufiO61HFnd/Ifqy2lk2U3T+WzTIRdOqde7lwX+jByyf', N'Quản trị viên', N'admin@shoplaptop.vn',  N'0901234567', 1),
+(N'khach1', N'qaBmAs6fprQMCvlJpwNY0ufiO61HFnd/Ifqy2lk2U3T+WzTIRdOqde7lwX+jByyf', N'Nguyễn Văn A',  N'khach1@gmail.com',   N'0912345678', 0);
 GO
 
 -- =============================================================================

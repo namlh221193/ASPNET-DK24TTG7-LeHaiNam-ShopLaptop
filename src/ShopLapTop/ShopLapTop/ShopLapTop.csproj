@@ -131,6 +131,7 @@
     <Compile Include="App_Code\GioHangHelper.cs" />
     <Compile Include="App_Code\GioHangItem.cs" />
     <Compile Include="App_Code\KetNoi.cs" />
+    <Compile Include="App_Code\MatKhauHelper.cs" />
     <Compile Include="ChiTiet.aspx.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

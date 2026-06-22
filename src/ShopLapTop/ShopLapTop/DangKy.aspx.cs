@@ -40,7 +40,7 @@ namespace ShopLapTop
                   VALUES (@ten, @mk, @hoten, @email, @sdt, 0)",
                 new SqlParameter[] {
                     new SqlParameter("@ten", tenDN),
-                    new SqlParameter("@mk", matKhau),
+                    new SqlParameter("@mk", MatKhauHelper.MaHoa(matKhau)),
                     new SqlParameter("@hoten", txtHoTen.Text.Trim()),
                     new SqlParameter("@email", txtEmail.Text.Trim()),
                     new SqlParameter("@sdt", txtSDT.Text.Trim())
